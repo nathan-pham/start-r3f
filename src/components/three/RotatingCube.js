@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from "@react-three/fiber"
+import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 
 export default function RotatingCube({speed=0.01, color="#000", position=[0, 0, 0], size=[1, 1, 1]}) {
@@ -9,7 +9,7 @@ export default function RotatingCube({speed=0.01, color="#000", position=[0, 0, 
     })
     
     return (
-        <mesh ref={mesh} position={position}>
+        <mesh ref={mesh} position={position} castShadow>
             <boxBufferGeometry attach="geometry" args={size} />
             <meshStandardMaterial attach="material" color={color} />
         </mesh>
