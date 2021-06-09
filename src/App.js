@@ -1,11 +1,11 @@
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 
-const Cube = () => {
+const Cube = ({ speed=0.01 }) => {
     const mesh = useRef(null)
 
     useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+        mesh.current.rotation.x = mesh.current.rotation.y += speed
     })
     
     return (
