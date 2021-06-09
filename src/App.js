@@ -1,25 +1,13 @@
-import { Canvas, useFrame } from "@react-three/fiber"
-import { useRef } from "react"
+import { Canvas } from "@react-three/fiber"
 
-const Cube = ({ speed=0.01 }) => {
-    const mesh = useRef(null)
-
-    useFrame(() => {
-        mesh.current.rotation.x = mesh.current.rotation.y += speed
-    })
-    
-    return (
-        <mesh ref={mesh}>
-            <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-            <meshStandardMaterial attach="material" />
-        </mesh>
-    )
-}
+import RotatingCube from "./components/RotatingCube"
+import Lights from "./components/Lights"
 
 export default function App() {
     return (
-        <Canvas>
-            <Cube />
+        <Canvas camera={{position: [-5, 2, 10], fov: 60}}>
+            <Lights />
+            <RotatingCube color="red" />
         </Canvas>
     )
 }
