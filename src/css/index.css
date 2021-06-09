@@ -1,0 +1,9 @@
+body {
+    background: #f1f4f8;
+    overflow: hidden;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
